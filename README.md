@@ -18,11 +18,14 @@
 ## 对皱纹纹理进行变形处理
 ### 提取皱纹纹理特征点坐标
 变形前需要先获取皱纹纹理上对应的人脸特征点坐标，由于皱纹纹理是提前准备的，所以可以直接通过[获取图片点坐标工具](https://www.mobilefish.com/services/record_mouse_coordinates/record_mouse_coordinates.php)来提取特性点坐标数据：
+
 ![](https://user-gold-cdn.xitu.io/2019/6/10/16b414dbf001aa26?w=665&h=516&f=jpeg&s=43190)
 
 ### 变形算法实现
 考虑到这是基于特征点的复杂变形，所以皱纹纹理图片的渲染选择了用 [OpenGL](https://www.opengl.org/)，iOS SDK 提供了封装好的 [GLKit](https://developer.apple.com/documentation/glkit) 来方便使用 OpenGL ，只需要创建一个 ``GLKViewController``:
+
 ![](https://user-gold-cdn.xitu.io/2019/6/8/16b369cd46e05f42?w=756&h=567&f=png&s=103758)
+
 然后重写 ``glkView`` 方法：
 ```swift
 import UIKit
