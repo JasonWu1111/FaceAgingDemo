@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bMx-wV-QKL">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Face Aging Controller-->
+        <scene sceneID="Zm5-aS-fXX">
+            <objects>
+                <viewController storyboardIdentifier="AgingPrediction" id="bMx-wV-QKL" userLabel="Face Aging Controller" customClass="FaceAgingController" customModule="FaceAgingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e35-nO-5X9"/>
+                        <viewControllerLayoutGuide type="bottom" id="jDP-LB-tJ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dRv-1z-zyS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Face" translatesAutoresizingMaskIntoConstraints="NO" id="WFA-Ua-Nhg" userLabel="Orignal" customClass="RoundCornerImageView" customModule="FaceAgingDemo" customModuleProvider="target">
+                                <rect key="frame" x="79.666666666666686" y="124" width="216" height="216"/>
+                                <color key="backgroundColor" red="0.90500102640000002" green="0.90500102640000002" blue="0.90500102640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="erP-gg-Zq3"/>
+                                    <constraint firstAttribute="width" constant="216" id="xMo-Gf-X8b"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUe-vn-jTn" userLabel="Aging Imge Area">
+                                <rect key="frame" x="79.666666666666686" y="390" width="216" height="216"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ea9-PC-iR8">
+                                        <rect key="frame" x="15" y="15" width="186" height="186"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="N6M-oq-Hac" kind="embed" identifier="GLKView" id="Ntm-l0-7mN"/>
+                                        </connections>
+                                    </containerView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Face" translatesAutoresizingMaskIntoConstraints="NO" id="vEM-K6-tST" customClass="RoundCornerImageView" customModule="FaceAgingDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="216" height="216"/>
+                                        <color key="backgroundColor" red="0.90500102640000002" green="0.90500102640000002" blue="0.90500102640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="1S7-Pf-Ds0"/>
+                                    <constraint firstItem="vEM-K6-tST" firstAttribute="centerX" secondItem="AUe-vn-jTn" secondAttribute="centerX" id="4KV-az-0Uc"/>
+                                    <constraint firstItem="ea9-PC-iR8" firstAttribute="centerY" secondItem="AUe-vn-jTn" secondAttribute="centerY" id="Glw-ww-9gG"/>
+                                    <constraint firstAttribute="width" constant="216" id="Xwm-Ot-TcX"/>
+                                    <constraint firstItem="vEM-K6-tST" firstAttribute="centerY" secondItem="AUe-vn-jTn" secondAttribute="centerY" id="ZqN-iZ-Njd"/>
+                                    <constraint firstItem="vEM-K6-tST" firstAttribute="height" secondItem="AUe-vn-jTn" secondAttribute="height" id="gox-hk-sId"/>
+                                    <constraint firstItem="ea9-PC-iR8" firstAttribute="height" secondItem="AUe-vn-jTn" secondAttribute="height" constant="-30" id="kr0-ef-J3d"/>
+                                    <constraint firstItem="ea9-PC-iR8" firstAttribute="centerX" secondItem="AUe-vn-jTn" secondAttribute="centerX" id="mYc-LF-3Zd"/>
+                                    <constraint firstItem="ea9-PC-iR8" firstAttribute="width" secondItem="AUe-vn-jTn" secondAttribute="width" constant="-30" id="nmE-yI-dbF"/>
+                                    <constraint firstItem="vEM-K6-tST" firstAttribute="width" secondItem="AUe-vn-jTn" secondAttribute="width" id="xT2-HC-EfA"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aw-kU-Xb5" userLabel="Share">
+                                <rect key="frame" x="167.66666666666666" y="724" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="share:" destination="bMx-wV-QKL" eventType="touchUpInside" id="azm-MQ-R8c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nnb-G0-gy3" firstAttribute="bottom" secondItem="4aw-kU-Xb5" secondAttribute="bottom" constant="24" id="85g-ME-kJw"/>
+                            <constraint firstItem="4aw-kU-Xb5" firstAttribute="centerX" secondItem="nnb-G0-gy3" secondAttribute="centerX" id="GnE-kv-SeV"/>
+                            <constraint firstItem="AUe-vn-jTn" firstAttribute="centerX" secondItem="nnb-G0-gy3" secondAttribute="centerX" id="Q1h-re-0tW"/>
+                            <constraint firstItem="WFA-Ua-Nhg" firstAttribute="centerX" secondItem="nnb-G0-gy3" secondAttribute="centerX" id="oMH-5l-udi"/>
+                            <constraint firstItem="AUe-vn-jTn" firstAttribute="top" secondItem="WFA-Ua-Nhg" secondAttribute="bottom" constant="50" id="us2-yM-Pnt"/>
+                            <constraint firstItem="WFA-Ua-Nhg" firstAttribute="top" secondItem="nnb-G0-gy3" secondAttribute="top" constant="80" id="xPQ-bv-kYS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nnb-G0-gy3"/>
+                    </view>
+                    <connections>
+                        <outlet property="agingImageView" destination="vEM-K6-tST" id="vcp-XT-jDY"/>
+                        <outlet property="originalImageView" destination="WFA-Ua-Nhg" id="Agv-xB-ipU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69e-zf-EOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="1174"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="JQ0-Xq-SHL">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="N6M-oq-Hac" customClass="FaceGLKViewController" customModule="FaceAgingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="frS-kF-tLI"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZL-r5-mdT"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="5LI-FF-M18">
+                        <rect key="frame" x="0.0" y="0.0" width="186" height="186"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ql8-P8-OKo"/>
+                        <connections>
+                            <outlet property="delegate" destination="N6M-oq-Hac" id="RnE-Dz-wdp"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L1i-pC-0M9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248" y="1173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Face" width="616" height="616"/>
+    </resources>
+</document>
